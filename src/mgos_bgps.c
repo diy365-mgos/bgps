@@ -8,10 +8,10 @@
 static void mg_bgps_timer_cb(void *arg) {
   float latitude;
   float longitude;
-  int accuracy;
+  float accuracy;
 
   if (mgos_bgps_get_position(&latitude, &longitude, &accuracy)) {
-    LOG(LL_INFO, ("GPS: lat %f, lng %f, accuracy %d", latitude, longitude, accuracy));
+    LOG(LL_INFO, ("GPS: lat %f, lng %f, accuracy %f", latitude, longitude, accuracy));
   } else {
     LOG(LL_ERROR, ("Error updating GPS position"));
   }
