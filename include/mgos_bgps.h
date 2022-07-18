@@ -28,7 +28,7 @@
 extern "C" {
 #endif
 
-bool mgos_bgps_get_position(float *latitude, float *longitude, int *accuracy);
+bool mgos_bgps_get_position(float *latitude, float *longitude, float *accuracy);
 
 #ifdef __cplusplus
 }
