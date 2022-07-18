@@ -1,0 +1,23 @@
+author: DIY365
+type: lib
+description: This Mongoose OS library is the base for implementing GPS libraries.
+version: 1.0
+
+sources:
+  - src
+
+includes:
+  - include
+
+filesystem:
+  - fs
+
+config_schema:
+  - ["gps", "o", {title: "GPS config"}]
+
+libs:
+
+tags:
+  - c
+
+manifest_version: 2017-09-29
