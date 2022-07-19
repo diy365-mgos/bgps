@@ -46,6 +46,7 @@ struct mgos_bgps_position {
 };
 
 struct mgos_bgps_position_changed {
+  bool init;
   struct mgos_bgps_position prev_pos;
   struct mgos_bgps_position cur_pos;
 };
