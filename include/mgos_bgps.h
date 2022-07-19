@@ -28,15 +28,27 @@
 extern "C" {
 #endif
 
+#define MGOS_BGPS_EVENT_BASE MGOS_EVENT_BASE('G', 'P', 'S')
+#define MGOS_EV_BGPS_ANY MGOS_BGPS_EVENT_BASE
+enum mgos_bthing_event {
+  MGOS_EV_BGPS_POSITION_CHANGED = MGOS_BGPS_EVENT_BASE,
+  MGOS_EV_BGPS_ALTITUDE_CHANGED
+};
+
 struct mgos_bgps_location {
   float latitude;
   float longitude;
-}
+};
 
 struct mgos_bgps_position {
   struct mgos_bgps_location location;
   float accuracy;
-}
+};
+
+struct mgos_bgps_position_changed {
+  struct mgos_bgps_position prev_pos;
+  struct mgos_bgps_position cur_pos;
+};
 
 bool mgos_bgps_get_position(struct mgos_bgps_position *position);
 
