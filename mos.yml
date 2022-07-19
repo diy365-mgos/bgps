@@ -14,7 +14,7 @@ filesystem:
 
 config_schema:
   - ["gps", "o", {title: "GPS config"}]
-  - ["gps.update_interval", "i", 5000, {"title": "Update interval in milliseconds."}]
+  - ["gps.update_interval", "i", 5000, {title: "Update interval in milliseconds."}]
 
 libs:
 
