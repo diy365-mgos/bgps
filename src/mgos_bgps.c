@@ -26,19 +26,19 @@ static void mg_bgps_update_timer_cb(void *arg) {
     // trigger the event
     mgos_event_trigger(MGOS_EV_BGPS_POSITION_CHANGED, &s_pos_changed);
 
-    LOG(LL_INFO, ("NEW GPS: lat %f, lng %f (accuracy %f)",
+    /* LOG(LL_INFO, ("NEW GPS: lat %f, lng %f (accuracy %f)",
       s_pos_changed.cur_pos.location.latitude,
       s_pos_changed.cur_pos.location.longitude,
       s_pos_changed.cur_pos.accuracy));
     LOG(LL_INFO, ("   PREV: lat %f, lng %f (accuracy %f)",
       s_pos_changed.prev_pos.location.latitude,
       s_pos_changed.prev_pos.location.longitude,
-      s_pos_changed.prev_pos.accuracy));
+      s_pos_changed.prev_pos.accuracy)); */
   } else {
-    LOG(LL_INFO, ("GPS: lat %f, lng %f (accuracy %f)",
+    /* LOG(LL_INFO, ("GPS: lat %f, lng %f (accuracy %f)",
       s_pos_changed.cur_pos.location.latitude,
       s_pos_changed.cur_pos.location.longitude,
-      s_pos_changed.cur_pos.accuracy));
+      s_pos_changed.cur_pos.accuracy)); */
   }
 
   if (s_pos_changed.init) s_pos_changed.init = false;
