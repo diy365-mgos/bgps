@@ -6,12 +6,13 @@
 #endif /* MGOS_HAVE_MJS */
 
 static void mg_bgps_timer_cb(void *arg) {
-  float latitude;
-  float longitude;
-  float accuracy;
+  struct mgos_bgps_position position;
 
-  if (mgos_bgps_get_position(&latitude, &longitude, &accuracy)) {
-    LOG(LL_INFO, ("GPS: lat %f, lng %f, accuracy %f", latitude, longitude, accuracy));
+  if (mgos_bgps_get_position(&position)) {
+    LOG(LL_INFO, ("GPS: lat %f, lng %f, accuracy %f",
+      position.location.latitude,
+      position.location.longitude,
+      position.accuracy));
   } else {
     LOG(LL_ERROR, ("Error updating GPS position"));
   }

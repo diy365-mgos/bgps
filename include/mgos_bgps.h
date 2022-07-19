@@ -28,7 +28,17 @@
 extern "C" {
 #endif
 
-bool mgos_bgps_get_position(float *latitude, float *longitude, float *accuracy);
+struct mgos_bgps_location {
+  float latitude;
+  float longitude;
+}
+
+struct mgos_bgps_position {
+  struct mgos_bgps_location location;
+  float accuracy;
+}
+
+bool mgos_bgps_get_position(struct mgos_bgps_position *position);
 
 #ifdef __cplusplus
 }
