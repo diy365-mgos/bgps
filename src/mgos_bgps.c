@@ -17,11 +17,6 @@ static void mg_bgps_update_timer_cb(void *arg) {
     return;
   }
 
-  LOG(LL_INFO, ("GPS: lat %f, lng %f, accuracy %f",
-    s_position.location.latitude,
-    s_position.location.longitude,
-    s_position.accuracy));
-
   bool is_changed = (s_position.location.latitude != prev_position.location.latitude ||
                      s_position.location.longitude != prev_position.location.longitude);
 
@@ -30,6 +25,20 @@ static void mg_bgps_update_timer_cb(void *arg) {
     memcpy(&(position_changed.prev_pos), &prev_position, sizeof(struct mgos_bgps_position));
     memcpy(&(position_changed.cur_pos), &s_position, sizeof(struct mgos_bgps_position));
     mgos_event_trigger(MGOS_EV_BGPS_POSITION_CHANGED, &position_changed);
+
+    LOG(LL_INFO, ("NEW GPS: lat %f, lng %f (accuracy %f)",
+      position_changed.cur_pos.location.latitude,
+      position_changed.cur_pos.location.longitude,
+      position_changed.cur_pos.accuracy));
+    LOG(LL_INFO, ("   PREV: lat %f, lng %f (accuracy %f)",
+      position_changed.prev_pos.location.latitude,
+      position_changed.prev_pos.location.longitude,
+      position_changed.prev_pos.accuracy));
+  } else {
+    LOG(LL_INFO, ("GPS: lat %f, lng %f (accuracy %f)",
+    s_position.location.latitude,
+    s_position.location.longitude,
+    s_position.accuracy));
   }
 
   if (!s_initialized) s_initialized = true;
