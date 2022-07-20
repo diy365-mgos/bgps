@@ -40,8 +40,8 @@ Event-data passed to `MGOS_EV_BGPS_POSITION_CHANGED` event's handlers (see [mgos
 
 |Field||
 |--|--|
-|init|Initialization flag: 'true' if 'cur_pos' has been initialized.|
-|prev_pos|Previous [GPS position](#mgos_bgps_position). The position is set to '0' the 'init' flag is 'true'.|
+|init|Initialization flag: `true` if `cur_pos` has been initialized.|
+|prev_pos|Previous [GPS position](#mgos_bgps_position). The position is set to `0` the `init` flag is `true`.|
 |cur_pos|Current [GPS position](#mgos_bgps_position).|
 ### mgos_bgps_location
 ```c
@@ -67,7 +67,7 @@ A GPS position.
 
 |Field||
 |--|--|
-|location|The GPS [location](#mgos_bgps_location)).|
+|location|The GPS [location](#mgos_bgps_location).|
 |accuracy|The accuracy of the estimated location, in meters. This represents the radius of a circle around the given location.|
 ### mgos_bgps_get_position
 ```c
