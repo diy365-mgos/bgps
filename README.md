@@ -6,7 +6,7 @@ This Mongoose OS library is the base for implementing GPS libraries.
 ```
 ## Configuration
 The library adds a `gps` configuration entry which contains configuration settings.
-```json
+```javascript
 "gps": {
   "auto_update": {      // GPS auto-update config
     "enable": true,     // Enable the auto-update
