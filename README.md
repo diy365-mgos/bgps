@@ -5,9 +5,9 @@ This Mongoose OS library is the base for implementing GPS libraries.
 You can start using one of these specialized GPS libaries:
 - [bGPS Google Geolocation API Library](https://github.com/diy365-mgos/bgps-gapi)
 ## Configuration
-The library adds a `gps` configuration entry which contains configuration settings.
+The library adds a `bgps` configuration entry which contains configuration settings.
 ```javascript
-"gps": {
+"bgps": {
   "auto_update": {      // GPS auto-update config
     "enable": true,     // Enable the auto-update
     "interval": 5000    // Auto-update interval (in milliseconds)
@@ -15,9 +15,9 @@ The library adds a `gps` configuration entry which contains configuration settin
 }
 ```
 ## C/C++ APIs Reference
-### mgos_bthing_event
+### mgos_bgps_event
 ```c
-enum mgos_bthing_event {
+enum mgos_bgps_event {
   MGOS_EV_BGPS_POSITION_CHANGED
 };
 ```

@@ -30,7 +30,7 @@ extern "C" {
 
 #define MGOS_BGPS_EVENT_BASE MGOS_EVENT_BASE('G', 'P', 'S')
 #define MGOS_EV_BGPS_ANY MGOS_BGPS_EVENT_BASE
-enum mgos_bthing_event {
+enum mgos_bgps_event {
   MGOS_EV_BGPS_POSITION_CHANGED = MGOS_BGPS_EVENT_BASE,
   MGOS_EV_BGPS_ALTITUDE_CHANGED
 };

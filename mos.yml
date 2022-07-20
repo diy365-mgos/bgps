@@ -13,10 +13,10 @@ filesystem:
   - fs
 
 config_schema:
-  - ["gps", "o", {title: "GPS config"}]
-  - ["gps.auto_update", "o", {title: "GPS auto-update config"}]
-  - ["gps.auto_update.enable", "b", true, {title: "Enable the auto-update"}]
-  - ["gps.auto_update.interval", "i", 5000, {title: "Auto-update interval (in milliseconds)"}]
+  - ["bgps", "o", {title: "GPS config"}]
+  - ["bgps.auto_update", "o", {title: "GPS auto-update config"}]
+  - ["bgps.auto_update.enable", "b", true, {title: "Enable the auto-update"}]
+  - ["bgps.auto_update.interval", "i", 5000, {title: "Auto-update interval (in milliseconds)"}]
 
 libs:
 

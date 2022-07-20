@@ -44,13 +44,13 @@ bool mgos_bgps_init() {
   if (!mgos_event_register_base(MGOS_BGPS_EVENT_BASE, "bGPS events")) return false;
 
   // Start the auto-update interval
-  if (mgos_sys_config_get_gps_auto_update_enable()) {
-    if (mgos_sys_config_get_gps_auto_update_interval() > 0) {
-      mgos_set_timer(mgos_sys_config_get_gps_auto_update_interval(),
+  if (mgos_sys_config_get_bgps_auto_update_enable()) {
+    if (mgos_sys_config_get_bgps_auto_update_interval() > 0) {
+      mgos_set_timer(mgos_sys_config_get_bgps_auto_update_interval(),
         MGOS_TIMER_REPEAT, mg_bgps_auto_update_timer_cb, NULL);
     } else {
       LOG(LL_ERROR,("Invalid uato-update timer's interval (%d ms)",
-        mgos_sys_config_get_gps_auto_update_interval()));
+        mgos_sys_config_get_bgps_auto_update_interval()));
     }
   }
 
