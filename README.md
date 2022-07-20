@@ -2,8 +2,8 @@
 ## Overview
 This Mongoose OS library is the base for implementing GPS libraries.
 ## GET STARTED
-```c
-```
+You can start using one of these specialized GPS libaries:
+- [bGPS Google Geolocation API Library](https://github.com/diy365-mgos/bgps-gapi)
 ## Configuration
 The library adds a `gps` configuration entry which contains configuration settings.
 ```javascript
